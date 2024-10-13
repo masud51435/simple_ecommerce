@@ -43,6 +43,7 @@ class HomePage extends StatelessWidget {
             itemCount: controller.filteredProducts.length,
             itemBuilder: (BuildContext context, int index) {
               final product = controller.filteredProducts[index];
+
               return Product(product: product);
             },
           );

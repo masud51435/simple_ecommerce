@@ -44,7 +44,9 @@ class TopImageSection extends StatelessWidget {
                 ),
               ),
               IconButton.filled(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed('/myCart');
+                },
                 style: IconButton.styleFrom(backgroundColor: whiteColor),
                 icon: Icon(
                   Icons.favorite_border_outlined,

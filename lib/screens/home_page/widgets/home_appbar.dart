@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:simple_ecommerce/controller/cart_controller.dart';
 
 import '../../../controller/product_controller.dart';
 
@@ -21,15 +23,20 @@ class HomeAppBar extends StatefulWidget implements PreferredSizeWidget {
 class _HomeAppBarState extends State<HomeAppBar> {
   @override
   Widget build(BuildContext context) {
+    final CartController cartController = CartController.instance;
     return AppBar(
       title: const Text('All Products'),
       centerTitle: true,
       actions: [
-        InkWell(
-          onTap: () {},
-          child: const Badge(
-            label: Text('2'),
-            child: Icon(Icons.shopping_cart),
+        Obx(
+          () => InkWell(
+            onTap: () {
+              Get.toNamed('/myCart');
+            },
+            child: Badge(
+              label: Text(cartController.cartItems.length.toString()),
+              child: Icon(Icons.shopping_cart),
+            ),
           ),
         ),
         const SizedBox(width: 15),

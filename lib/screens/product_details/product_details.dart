@@ -5,6 +5,7 @@ import 'package:simple_ecommerce/core/app_colors.dart';
 import 'package:simple_ecommerce/model/product_model.dart';
 import 'package:simple_ecommerce/screens/product_details/widgets/top_image_section.dart';
 
+import '../../controller/cart_controller.dart';
 import 'widgets/product_description.dart';
 
 class ProductDetails extends StatelessWidget {
@@ -13,6 +14,7 @@ class ProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ProductModel product = Get.arguments;
+    final CartController cartController = CartController.instance;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
