@@ -5,6 +5,7 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:simple_ecommerce/common/appbar/Custom_appbar.dart';
 
 import 'package:simple_ecommerce/model/product_model.dart';
+import 'package:simple_ecommerce/screens/cart/widgets/bottom_sheet_item.dart';
 
 import '../../controller/cart_controller.dart';
 import '../../core/app_colors.dart';
@@ -134,7 +135,70 @@ class CartScreen extends StatelessWidget {
               const SizedBox(width: 40),
               Expanded(
                 child: ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    showModalBottomSheet<void>(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 10),
+                              child: Container(
+                                height: 7,
+                                width: 60,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey.shade500,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                              ),
+                            ),
+                          
+                            BottomSheetItem(
+                              title: 'Sub-Total',
+                              price:
+                                  '\$${cartController.totalPrice.toStringAsFixed(2)}',
+                            ),
+                            const BottomSheetItem(
+                              title: 'Delivery Fee',
+                              price: '\$${00}',
+                            ),
+                            const BottomSheetItem(
+                              title: 'Discount',
+                              price: '-\$${00}',
+                            ),
+                            const Divider(),
+                            BottomSheetItem(
+                              title: 'Total Cost',
+                              price:
+                                  '\$${cartController.totalPrice.toStringAsFixed(2)}',
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: ElevatedButton(
+                                onPressed: () {},
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.blue,
+                                  fixedSize: Size(Get.width, 50),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                ),
+                                child: const Text(
+                                  'Proceed to Order',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
                   label: const Text(
                     'CheckOut',
                     style: TextStyle(
