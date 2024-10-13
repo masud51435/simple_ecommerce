@@ -15,7 +15,7 @@ class HomeAppBar extends StatefulWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => const Size.fromHeight(110);
 }
 
 class _HomeAppBarState extends State<HomeAppBar> {
@@ -23,6 +23,17 @@ class _HomeAppBarState extends State<HomeAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       title: const Text('All Products'),
+      centerTitle: true,
+      actions: [
+        InkWell(
+          onTap: () {},
+          child: const Badge(
+            label: Text('2'),
+            child: Icon(Icons.shopping_cart),
+          ),
+        ),
+        const SizedBox(width: 15),
+      ],
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(50.0),
         child: Padding(
@@ -40,7 +51,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
               suffixIcon: widget.controller.searchController.text.isNotEmpty
                   ? IconButton(
                       onPressed: () {
-                        widget.controller.clearSearchQuery();
+                        widget.controller.searchController.clear();
                         setState(() {});
                       },
                       icon: const Icon(

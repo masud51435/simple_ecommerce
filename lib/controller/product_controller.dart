@@ -60,10 +60,4 @@ class ProductController extends GetxController {
       );
     }
   }
-
-// clear search bar
-  void clearSearchQuery() {
-    searchController.clear();
-    getProducts();
-  }
 }
