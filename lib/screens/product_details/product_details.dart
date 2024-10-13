@@ -9,11 +9,12 @@ import '../../controller/cart_controller.dart';
 import 'widgets/product_description.dart';
 
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({super.key});
+  const ProductDetails({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
-    final ProductModel product = Get.arguments;
     final CartController cartController = CartController.instance;
     return Scaffold(
       body: SingleChildScrollView(
@@ -50,7 +51,9 @@ class ProductDetails extends StatelessWidget {
             const SizedBox(width: 40),
             Expanded(
               child: ElevatedButton.icon(
-                onPressed: () {},
+                onPressed: () {
+                  cartController.addToCart(product);
+                },
                 label: const Text(
                   'Add to Cart',
                   style: TextStyle(

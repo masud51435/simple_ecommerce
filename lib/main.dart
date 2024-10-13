@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:simple_ecommerce/controller/product_controller.dart';
 import 'package:simple_ecommerce/core/app_colors.dart';
 import 'package:simple_ecommerce/core/app_routes.dart';
 import 'package:simple_ecommerce/model/product_model.dart';
@@ -22,7 +21,6 @@ Future<void> main() async {
 
   // Initialize CartController globally
   Get.put(CartController());
-  Get.put(ProductController());
 
   runApp(const MyApp());
 }
