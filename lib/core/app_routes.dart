@@ -17,7 +17,7 @@ class AppRoutes {
    
     GetPage(
       name: MyCART,
-      page: () =>  const CartScreen(),
+      page: () =>   CartScreen(),
       transition: Transition.rightToLeft, 
     ),
     //  GetPage(

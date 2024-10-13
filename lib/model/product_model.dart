@@ -17,6 +17,8 @@ class ProductModel {
   String? image;
   @HiveField(6)
   Rating? rating;
+  @HiveField(7)
+  
 
   ProductModel({
     this.id,
@@ -26,6 +28,7 @@ class ProductModel {
     this.category,
     this.image,
     this.rating,
+    
   });
 
   ProductModel.fromJson(Map<String, dynamic> json) {

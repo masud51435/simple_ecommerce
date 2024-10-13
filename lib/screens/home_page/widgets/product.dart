@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:simple_ecommerce/screens/product_details/product_details.dart';
 
-import '../../../core/app_routes.dart';
 import '../../../model/product_model.dart';
 
 class Product extends StatelessWidget {
@@ -16,7 +15,7 @@ class Product extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to(()=> ProductDetails(product: product));
+        Get.to(() => ProductDetails(product: product));
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

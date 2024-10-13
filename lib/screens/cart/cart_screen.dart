@@ -2,6 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:simple_ecommerce/common/appbar/Custom_appbar.dart';
+
 import 'package:simple_ecommerce/model/product_model.dart';
 
 import '../../controller/cart_controller.dart';
@@ -15,9 +17,7 @@ class CartScreen extends StatelessWidget {
     final CartController cartController = Get.find<CartController>();
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Your Cart'),
-      ),
+      appBar: const CustomAppBar(title: Text('Your Cart')),
       body: Obx(
         () {
           if (cartController.cartItems.isEmpty) {
@@ -46,7 +46,7 @@ class CartScreen extends StatelessWidget {
                             (context, url, downloadProgress) => Center(
                           child: LoadingAnimationWidget.staggeredDotsWave(
                             color: Colors.purple.shade300,
-                            size: 30,
+                            size: 20,
                           ),
                         ),
                         errorWidget: (context, url, error) =>
@@ -62,14 +62,13 @@ class CartScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            '\$${individualTotalPrice.toStringAsFixed(2)}',
+                            ' \$${individualTotalPrice.toStringAsFixed(2)}',
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(width: 20),
+                          const SizedBox(width: 25),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               IconButton(
                                 onPressed: () {
