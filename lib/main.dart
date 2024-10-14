@@ -23,7 +23,6 @@ Future<void> main() async {
   Hive.registerAdapter(ProductModelAdapter());
   Hive.registerAdapter(RatingAdapter());
   Hive.registerAdapter(CartItemModelAdapter());
-  await Hive.openBox<ProductModel>('cartBox');
   await Hive.openBox<ProductModel>('productBox');
   await Hive.openBox<CartItemModel>('cartItemBox');
 
