@@ -121,7 +121,7 @@ class CheckOut extends StatelessWidget {
                       Get.toNamed('/orderConfirm');
                       cartController.clearCart();
                     } else {
-                      Get.toNamed('/login');
+                      Get.toNamed('/signUp');
                     }
                   },
                   style: ElevatedButton.styleFrom(
