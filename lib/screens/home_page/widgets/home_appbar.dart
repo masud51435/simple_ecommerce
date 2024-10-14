@@ -35,7 +35,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
             },
             child: Badge(
               label: Text(cartController.cartItems.length.toString()),
-              child: Icon(Icons.shopping_cart),
+              child: const Icon(Icons.shopping_cart),
             ),
           ),
         ),

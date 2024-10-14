@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import '../core/app_colors.dart';
 
 class CommonButton extends StatelessWidget {
-  CommonButton({
+  const CommonButton({
     super.key,
     required this.onTap,
     required this.text,
