@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:simple_ecommerce/order_confirm/order_confirm.dart';
+import 'package:simple_ecommerce/screens/order_confirm/order_confirm.dart';
 import 'package:simple_ecommerce/screens/cart/cart_screen.dart';
 import 'package:simple_ecommerce/screens/checkout/check_out.dart';
 
