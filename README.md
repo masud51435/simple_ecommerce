@@ -1,18 +1,20 @@
-# Flutter Shopping Cart App
+# Flutter E-Commerce App
 
-A Flutter application that implements a shopping cart system with Firebase integration for authentication . This project demonstrates how to manage state with GetX, store data using Hive, and utilize Firebase for backend services.
+A Flutter application that fetches product data from an API, stores it offline using Hive, and implements a shopping cart with Firebase authentication. The app allows users to view products, add them to a cart, and complete purchases while managing their account securely.
 
 ## Features
 
-- User authentication with Firebase.
-- Persistent cart storage using Hive.
-- Add, remove, and update products in the cart.
-- Clear all items from the cart.
+- **Data Fetching**: Retrieves product data from a specified API.
+- **Offline Storage**: Saves product data locally using Hive for offline access.
+- **Shopping Cart**: Allows users to add products to a cart, view cart items, and manage quantities.
+- **Checkout Page**: Displays the selected cart items and calculates the total amount.
+- **User Authentication**: Users can sign up or log in using Firebase Authentication.
+- **Success Page**: Redirects users to a success page upon completing their order.
 
 ## Technologies Used
 
-- **Flutter**: UI toolkit for building natively compiled applications for mobile.
-- **GetX**: State management solution for Flutter.
+- **Flutter**: A UI toolkit for building natively compiled applications for mobile.
+- **GetX**: State management library for Flutter applications.
 - **Hive**: Lightweight and fast NoSQL database for Flutter.
-- **Firebase**: Provides backend services including authentication and cloud messaging.
-- **Dart**: Programming language for Flutter development.
+- **Firebase**: Backend services including authentication and cloud messaging.
+- **Dart**: The programming language used for Flutter development.
