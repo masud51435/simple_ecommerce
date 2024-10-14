@@ -4,6 +4,8 @@ import 'package:simple_ecommerce/screens/cart/cart_screen.dart';
 import 'package:simple_ecommerce/screens/checkout/check_out.dart';
 
 import '../screens/home_page/home_page.dart';
+import '../screens/login/login.dart';
+import '../screens/sign_up/sign_up.dart';
 
 class AppRoutes {
   static String HOMEPAGE = '/homePage';
@@ -18,7 +20,6 @@ class AppRoutes {
       name: HOMEPAGE,
       page: () => const HomePage(),
     ),
-
     GetPage(
       name: MyCART,
       page: () => const CartScreen(),
@@ -33,17 +34,13 @@ class AppRoutes {
       name: ORDERCONFIRM,
       page: () => const OrderConfirm(),
     ),
-    //  GetPage(
-    //   name: SIGNUP,
-    //   page: () => const SignUp(),
-    // ),
-    // GetPage(
-    //   name: LOGIN,
-    //   page: () => const Login(),
-    // ),
-    // GetPage(
-    //   name: ADDNOTE,
-    //   page: () => const AddNotePage(),
-    // ),
+    GetPage(
+      name: SIGNUP,
+      page: () => const SignUp(),
+    ),
+    GetPage(
+      name: LOGIN,
+      page: () => const Login(),
+    ),
   ];
 }

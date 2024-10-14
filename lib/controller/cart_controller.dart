@@ -54,6 +54,13 @@ class CartController extends GetxController {
     cartItems.refresh();
   }
 
+  //method for clear all items from the cart
+  void clearCart() {
+    cartItems.clear();
+    cartBox.clear();
+    cartItems.refresh();
+  }
+
   // Method to remove a product from the cart
   void removeFromCart(ProductModel product) {
     int index =

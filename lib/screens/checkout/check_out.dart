@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
@@ -114,7 +115,14 @@ class CheckOut extends StatelessWidget {
                 const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
-                    Get.toNamed('/orderConfirm');
+                    final user = FirebaseAuth.instance.currentUser;
+
+                    if (user != null) {
+                      Get.toNamed('/orderConfirm');
+                      cartController.clearCart();
+                    } else {
+                      Get.toNamed('/login');
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,

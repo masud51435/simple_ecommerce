@@ -43,7 +43,16 @@ class BottomSection extends StatelessWidget {
           Expanded(
             child: ElevatedButton.icon(
               onPressed: () {
-                Get.toNamed('/checkout');
+                if (cartController.cartItems.isNotEmpty) {
+                  Get.toNamed('/checkout');
+                } else {
+                  Get.snackbar(
+                    "Empty cart",
+                    "Please add any item in your cart",
+                    snackPosition: SnackPosition.TOP,
+                    duration: const Duration(seconds: 2),
+                  );
+                }
               },
               label: const Text(
                 'CheckOut',
