@@ -30,11 +30,8 @@ class CartController extends GetxController {
         .firstWhereOrNull((item) => item.productModel.id == product.id);
 
     if (existingItem != null) {
-      // If the product exists, increase the quantity
-      existingItem.quantity += 1;
-      cartBox.put(existingItem.productModel.id, existingItem);
       Get.snackbar(
-        "Updated",
+        "Already Added",
         "Increased the quantity of ${product.title} in your cart",
         snackPosition: SnackPosition.TOP,
         duration: const Duration(seconds: 2),
