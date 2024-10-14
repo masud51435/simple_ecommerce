@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:simple_ecommerce/order_confirm/order_confirm.dart';
 import 'package:simple_ecommerce/screens/cart/cart_screen.dart';
 import 'package:simple_ecommerce/screens/checkout/check_out.dart';
 
@@ -10,6 +11,7 @@ class AppRoutes {
   static String LOGIN = '/login';
   static String MyCART = '/myCart';
   static String CHECKOUT = '/checkout';
+  static String ORDERCONFIRM = '/orderConfirm';
 
   static List<GetPage> routes = [
     GetPage(
@@ -19,13 +21,17 @@ class AppRoutes {
 
     GetPage(
       name: MyCART,
-      page: () => CartScreen(),
+      page: () => const CartScreen(),
       transition: Transition.rightToLeft,
     ),
     GetPage(
       name: CHECKOUT,
-      page: () => CheckOut(),
+      page: () => const CheckOut(),
       transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: ORDERCONFIRM,
+      page: () => const OrderConfirm(),
     ),
     //  GetPage(
     //   name: SIGNUP,

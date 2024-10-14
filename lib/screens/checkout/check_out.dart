@@ -113,7 +113,9 @@ class CheckOut extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed('/orderConfirm');
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
                     fixedSize: Size(Get.width, 50),
